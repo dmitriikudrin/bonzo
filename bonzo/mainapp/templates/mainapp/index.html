@@ -1,0 +1,10 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="/url/" method="post">
+        {% csrf_token %}
+        <input type="text" name="url">
+        <input type="submit">
+    </form>
+{% endblock %}
