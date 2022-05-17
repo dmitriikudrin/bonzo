@@ -1,11 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from mainapp import views as mainapp_views
 
 app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp_views.index, name='index'),
-    path('url/', mainapp_views.get_short_url, name='url'),
-
+    re_path(r'(?P<short_url>.{8})/$', mainapp_views.sh_url, name='sh_url'),
 ]

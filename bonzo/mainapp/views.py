@@ -9,10 +9,20 @@ def index(request):
     return render(request, 'mainapp/index.html', context)
 
 
-def get_short_url(request):
-    if request.method == 'POST':
-        short_url = request.POST["url"]
-        context = {
-            'short_url': short_url
-        }
-        return render(request, 'mainapp/url.html', context)
+def sh_url(request, short_url):
+    context = {
+        'page_title': short_url,
+    }
+    return render(request, 'mainapp/index.html', context)
+
+
+def duplicate_short_url_check():
+    pass
+
+
+def duplicate_url_check():
+    pass
+
+
+def get_short_url():
+    pass
