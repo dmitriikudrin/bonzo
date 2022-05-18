@@ -6,5 +6,6 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp_views.index, name='index'),
-    re_path(r'(?P<short_url>.{8})/$', mainapp_views.sh_url, name='sh_url'),
+    path('404/', mainapp_views.page_not_found_view, name='404'),
+    re_path(r'(?P<short_url>.{8})/$', mainapp_views.open_short_url, name='open_short_url'),
 ]

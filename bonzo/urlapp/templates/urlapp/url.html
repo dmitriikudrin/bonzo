@@ -1,6 +1,36 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
-{% block content %}
-    {{ short_url }}
+{% block js_top %}
+    {{ block.super }}
+    <script src={% static "js/js_actions.js" %}></script>
 {% endblock %}
+
+{% block content %}
+    <!-- ******************** HeaderWrap ********************-->
+    <div id="headerwrap">
+        <header class="clearfix">
+            <h1><span>Bonzo!</span> Сервис сокращения ссылок.</h1>
+            <div class="container">
+                <div class="row">
+                    {% csrf_token %}
+                    <h2 id="short_url">http://127.0.0.1:8000/{{ short_url }}</h2>
+                    <button onclick="copyShortURL()" class="cform-submit">Скопировать</button>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        {#                        <ul class="icon">#}
+                        {#                            <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>#}
+                        {#                            <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>#}
+                        {#                            <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>#}
+                        {#                            <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>#}
+                        {#                            <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li>#}
+                        {#                        </ul>#}
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    {% include 'mainapp/includes/inc__features.html' %} }}
+{% endblock %}
+
