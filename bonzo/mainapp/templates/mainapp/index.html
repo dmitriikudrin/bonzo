@@ -1,10 +1,150 @@
-{% extends 'mainapp/base.html' %}
 {% load static %}
 
-{% block content %}
-    <form action="/url/shorten/" method="post">
-        {% csrf_token %}
-        <input type="text" name="url">
-        <input type="submit">
-    </form>
-{% endblock %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Legend - One Page Bootstrap Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Styles -->
+    <link href={% static "css/bootstrap.css" %} rel="stylesheet">
+    <link href={% static "css/style.css" %} rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css' href={% static "css/prettyPhoto.css" %} type='text/css' media='all'>
+    <link href={% static "css/fontello.css" %} type="text/css" rel="stylesheet">
+    <!--[if lt IE 7]>
+    <link href={% static "css/fontello-ie7.css" %} type="text/css" rel="stylesheet">
+    <![endif]-->
+    <!-- Google Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <!-- Load LocalScroll -->
+    <script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <!-- prettyPhoto Initialization -->
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+        });
+    </script>
+</head>
+<body>
+<!--******************** NAVBAR ********************-->
+<div class="navbar-wrapper">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                <h1 class="brand"><a href="#top">Bonzo!</a></h1>
+                <nav class="pull-right nav-collapse collapse">
+                    <ul id="menu-main" class="nav">
+                        <li><a title="portfolio" href="#portfolio">Portfolio</a></li>
+                        <li><a title="services" href="#services">Services</a></li>
+                        <li><a title="news" href="#news">News</a></li>
+                        <li><a title="team" href="#team">Team</a></li>
+                        <li><a title="contact" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="top"></div>
+<!-- ******************** HeaderWrap ********************-->
+<div id="headerwrap">
+    <header class="clearfix">
+        <h1><span>Bonzo!</span> Сервис сокращения ссылок.</h1>
+        <div class="container">
+            <div class="row">
+                <form action="/url/shorten/" method="post" class="span12">
+                    {% csrf_token %}
+                    <h2>Сократите любую ссылку до минимальной длины</h2>
+                    <input type="text" name="url" placeholder="https://www.example.com" class="cform-text" size="40"
+                           title="your email">
+                    <input type="submit" value="Сократить" class="cform-submit">
+                </form>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <ul class="icon">
+                        <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<!--******************** Feature ********************-->
+<div class="scrollblock">
+    <section id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <article>
+                        <p>We work to make web a beautiful place.</p>
+                        <p>We craft beautiful designs and convert them into</p>
+                        <p>fully functional and user-friendy web app.</p>
+                    </article>
+                </div>
+                <!-- ./span12 -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- ./container -->
+    </section>
+</div>
+<hr>
+
+<div class="footer-wrapper">
+    <div class="container">
+        <footer>
+            <small>&copy; 2013 Inbetwin Network. All rights reserved.</small>
+        </footer>
+    </div>
+    <!-- ./container -->
+</div>
+<!-- Loading the javaScript at the end of the page -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
+
+<!--ANALYTICS CODE-->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29231762-1']);
+    _gaq.push(['_setDomainName', 'dzyngiri.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</body>
+</html>
