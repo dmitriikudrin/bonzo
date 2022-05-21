@@ -10,11 +10,11 @@
     <!-- ******************** HeaderWrap ********************-->
     <div id="headerwrap">
         <header class="clearfix">
-            <h1><span>Bonzo!</span> Сервис сокращения ссылок.</h1>
+            <h1><span>Zonzo!</span> Сервис сокращения ссылок.</h1>
             <div class="container">
                 <div class="row">
                     {% csrf_token %}
-                    <h2 id="short_url">http://127.0.0.1:8000/{{ short_url }}</h2>
+                    <h2 id="short_url">{{ short_url }}</h2>
                     <button onclick="copyShortURL()" class="cform-submit">Скопировать</button>
                 </div>
                 <div class="row">
